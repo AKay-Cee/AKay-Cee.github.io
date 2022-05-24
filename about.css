@@ -1,0 +1,26 @@
+.h2class {
+    text-decoration: underline;
+    color: red;
+}
+
+.photo {
+    width: 20%;
+    border-radius: 50%;
+}
+
+.happydiv {
+    float: left;
+    width: 300px;
+    height: 200px;
+    margin: 2px;
+}
+
+.modeNamediv {
+    float: left;
+    width: 50px;
+    margin-left: 10px;
+    padding-top: 180px;
+}
+body{
+    background-color: aqua;
+}
