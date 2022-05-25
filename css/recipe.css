@@ -1,0 +1,36 @@
+body{
+    background-color: white;
+    color:#404040;
+    font-size: 11pt;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+h3{
+    text-decoration: underline;
+    color: #A4A400;
+    background-color: #F0F0F0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+h4{
+    text-decoration: underline;
+    color: #A4A400;
+    background-color: #F0F0F0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+span{
+    color:black;
+    font-weight: bold;
+}
+.comments{
+    margin-left:30px;
+    margin-right:30px;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: #FFFFA8;
+    font:italic;
+}
+.container{
+    font:italic;
+}
+a{
+    color: #A4A400;
+}
