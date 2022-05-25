@@ -34,3 +34,8 @@ span{
 a{
     color: #A4A400;
 }
+.copyright{
+    float:left;
+    text-align: right;
+    font-weight: lighter;
+}
