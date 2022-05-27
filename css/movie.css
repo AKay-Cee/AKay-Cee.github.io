@@ -69,7 +69,6 @@ h1 {
 
 }
 
-
 .nestedChild {
   display: grid;
   grid-template-columns: auto auto;
@@ -87,6 +86,9 @@ h1 {
   margin: 2px;
   background-color: #E8DC9B;
   font-weight: bold;
+}
+.floatleft{
+  float:left;
 }
 
 

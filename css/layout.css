@@ -1,0 +1,27 @@
+body{
+    background-color: black;
+    color:white;
+}
+.mainLayout{
+    display:grid;
+    grid-template-columns: 35% 35% 30%;
+    column-gap: 10px;
+}
+.mainLayout>div{
+    padding: 10px;
+}
+.tweet{
+    display:grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    row-gap: 10px;    
+}
+.instagram{
+    display:grid;
+    grid-template-columns: 1fr 1fr; 
+    grid: gap 1em;
+
+}
+img{
+    width:100px
+}
+
