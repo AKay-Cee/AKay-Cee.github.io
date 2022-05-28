@@ -5,49 +5,87 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Layout</title>
-    <link rel="stylesheet" href="./css/layout.css">
+    <title>Footer</title>
+    <link rel="stylesheet" href="css/layout1.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
 </head>
 
 <body>
-    <div class="mainLayout">
-        <div>
-            <h3>About Us</h3>
-            <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt omnis qui porro libero, saepe dolor!
+    <footer>
+        <div class="flex-3">
+            <div class="aboutUs">
+                <div class="padding20">
+                    <h3>About Us</h3>
+                </div>
+
+                <div class="padding10 textColor">
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quibusdam, reprehenderit eos officiis
+                    accusantium doloribus minima repellat dolorum ut neque in a assumenda. Autem vero suscipit facilis
+                    recusandae ipsam nulla quae.
+                </div>
+                <div class="padding10">
+                    <span><i class="bi bi-telephone"></i></span> +1234567890
+                </div>
+                <div class="padding10">
+                    <span><i class="bi bi-envelope"></i></span> info@gmail.com
+                </div>
+                <div class="padding10">
+                    <input type="text" placeholder="Enter your e-mail"> <button class="btn"> Send</button>
+                </div>
+            </div>
+            <div class="latest">
+                <div class="padding20">
+                    <h3>Latest Tweet</h3>
+                </div>
+                <div class="padding10 textColor italicText">
+                    <span class="tweetFlex"> <i class="bi bi-twitter paddingRight10"></i> Lorem ipsum, dolor sit amet
+                        consectetur adipisicing
+                        elit. Quibusdam,
+                        reprehenderit eos officiis
+                        accusantium doloribus minima repellat dolorum ut neque in a assumenda.
+                    </span>
+                </div>
+                <div class="padding10 textColor italicText">
+                    <span class="tweetFlex"> <i class="bi bi-twitter paddingRight10"></i> Lorem ipsum, dolor sit amet
+                        consectetur
+                        adipisicing
+                        elit. Quibusdam,
+                        reprehenderit eos officiis
+                        accusantium doloribus minima repellat dolorum ut neque in a assumenda.
+                    </span>
+                </div>
+                <div class="padding10 textColor italicText">
+                    <span class="tweetFlex"> <i class="bi bi-twitter paddingRight10"></i> Lorem ipsum, dolor sit amet
+                        consectetur
+                        adipisicing
+                        elit. Quibusdam,
+                        reprehenderit eos officiis
+                        accusantium doloribus minima repellat dolorum ut neque in a assumenda.
+                    </span>
+                </div>
+            </div>
+            <div class="insta">
+                <div class="padding20">
+                    <h3>Instagram</h3>
+                </div>
+                <div class="imgGrid">
+                    <img src="./images/image1.jpg" alt="image1" class="img100">
+                    <img src="./images/image2.jpg" alt="image2" class="img100">
+                    <img src="./images/image3.jpg" alt="image3" class="img100">
+                    <img src="./images/image4.jpg" alt="image4" class="img100">
+                </div>
             </div>
         </div>
-        <div>
-            <h3>Latest Tweet</h3>
-            <div class="tweet">
-                <div>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sit, doloribus.
-
-                </div>
-                <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, ipsa.
-
-                </div>
-                <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, ipsa.
-
-                </div>
-            </div>
+        <hr class="margin50">
+        <div class="flex-3">
+            <div>Home</div>
+            <div>About</div>
+            <div>Our Works</div>
+            <div>Services</div>
+            <div>Blogs</div>
+            <div>Contacts</div>
         </div>
-        <div class="instagram">
-            <h3>Instagram</h3>
-            <br>
-            <div>
-                <img src="photo_kkc.jpg" alt="test">
-            </div>
-            <div>
-                <img src="photo_kkc.jpg" alt="test">
-            </div>
-            <div>
-                <img src="photo_kkc.jpg" alt="test">
-            </div>
-            <div>
-                <img src="photo_kkc.jpg" alt="test">
-            </div>
-        </div>
-    </div>
-
+    </footer>
 </body>
 
 </html>

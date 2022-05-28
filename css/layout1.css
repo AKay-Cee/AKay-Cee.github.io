@@ -1,0 +1,88 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #262729;
+    color: white;
+    font-family: Helvetica, sans-serif;
+}
+
+.flex-3 {
+    display: flex;
+    padding: 30px;
+    /* justify-content: space-between; */
+    /* align-items: flex-start; */
+}
+
+.flex-3>div {
+    padding: 30px;
+    /* width: 30%; */
+    /* border: 1px solid; */
+}
+
+/* .flex-3 div {
+    padding: 10px;
+     width: 30%; 
+    border: 1px solid;
+} */
+
+.aboutUs {
+    flex: 2;
+}
+
+.latest {
+    flex: 2;
+}
+
+/* .insta {
+    flex: 1;
+} */
+
+.padding10 {
+    padding: 10px 0;
+}
+
+.padding20 {
+    padding-bottom: 20px;
+}
+
+.textColor {
+    color: #95979c;
+}
+
+.img100 {
+    height: 150px;
+    width: 150px;
+}
+
+.paddingRight10 {
+    padding-right: 10px;
+}
+
+/* 
+.insta>div {
+    grid-template-columns: 1fr 1fr;
+} */
+
+.imgGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+    padding-top: 10px;
+}
+
+.italicText {
+    font-style: italic;
+}
+
+.margin50 {
+    margin: 0 50px;
+}
+
+.tweetFlex {
+    display: flex;
+    justify-content: space-evenly;
+}
