@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+
+        function display() {
+            let input1 = document.getElementById("input1");
+            let input1lbl = document.createElement("span");
+            input1lbl.setAttribute("id", "mylbl")
+            input1lbl.innerHTML = input1.value;
+            input1.replaceWith(input1lbl);
+
+            let age = document.getElementById("age");
+            let agelbl = document.createElement("span");
+            agelbl.innerHTML = age.value;
+            age.replaceWith(agelbl);
+
+            let email = document.getElementById("email");
+            let emaillbl = document.createElement("label");
+            emaillbl.innerHTML = email.value;
+            email.replaceWith(emaillbl);
+
+
+            //let mastersradio = document.getElementById("masters");
+            //let phdradio = document.getElementsById("phd");
+            let levellbl = document.createElement("label");
+            //if (mastersradio.checked) {
+            //    levellbl.innerHTML = "Level: Masters";
+            //} else if (phdradio.checked) {
+            //    levellbl.innerHTML = "Level: Phd";
+            //}
+            let levelradio = document.getElementById("level");
+            console.log(levelradio.value);
+            if (levelradio.value == 'masters') {
+                levellbl.innerHTML = "Level:Masters"
+            } else {
+                levellbl.innerHTML = "Level:Phd"
+            }
+            let leveldiv = document.getElementById("leveldiv");
+            leveldiv.replaceWith(levellbl);
+
+
+            let program = document.getElementById("selectprog");
+            let programlbl = document.createElement("span")
+            programlbl.innerHTML = program.value;
+            let programname = document.createElement("span");
+            programname.innerHTML = "Program: ";
+            $("#selectdiv").prepend(programname);
+            program.replaceWith(programlbl);
+        }
+
+
+    </script>
+</head>
+
+<body>
+    <div in="textDiv">
+        <span> Name: </span>
+        <span><input type="text" id="input1" name="input1" value="input"></span>
+    </div>
+    <br>
+    <div>
+        <span> Age:</span>
+        <span> <input type="number" id="age" name="agename" value="0"></span>
+    </div>
+    <br>
+    <div>
+        <span>Email:</span><span> <input type="email" id="email"></span>
+    </div>
+    <br>
+    <div id="leveldiv">
+        <span>Level</span>
+        <span><input type="radio" id="level" name="radiobtn" value="masters"></span> Masters
+        <span><input type="radio" id="level" name="radiobtn" value="phd">Phd</span>
+    </div>
+    <br>
+    <div id="selectdiv">
+        <select name="selectprogram" id="selectprog">
+            <option value="Compro"> Compro </option>
+            <option value="MBA">MBA</option>
+            <option value="MSD">MSD</option>
+            <option value="Ayurveda">Ayurveda</option>
+        </select>
+    </div>
+    <br>
+    <button onclick="display()"> submit</button>
+</body>
+
+</html>
