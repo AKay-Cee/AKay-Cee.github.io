@@ -8,88 +8,133 @@
     <title>Document</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script>
+        $(function () {
+            function display() {
+                let input1 = $("#input1");
+                let input1lbl = document.createElement("span");
+                input1lbl.setAttribute("id", "mylbl")
+                //input1lbl.innerHTML = input1[0].value;
+                input1lbl.innerHTML = input1.val();
+                input1.replaceWith(input1lbl);
 
-        function display() {
-            let input1 = document.getElementById("input1");
-            let input1lbl = document.createElement("span");
-            input1lbl.setAttribute("id", "mylbl")
-            input1lbl.innerHTML = input1.value;
-            input1.replaceWith(input1lbl);
+                //let age = document.getElementById("age");
+                let age = $("#age");
+                let agelbl = document.createElement("span");
+                agelbl.innerHTML = age.val();
+                age.replaceWith(agelbl);
 
-            let age = document.getElementById("age");
-            let agelbl = document.createElement("span");
-            agelbl.innerHTML = age.value;
-            age.replaceWith(agelbl);
-
-            let email = document.getElementById("email");
-            let emaillbl = document.createElement("label");
-            emaillbl.innerHTML = email.value;
-            email.replaceWith(emaillbl);
+                let email = document.getElementById("email");
+                let emaillbl = document.createElement("label");
+                emaillbl.innerHTML = email.value;
+                email.replaceWith(emaillbl);
 
 
-            //let mastersradio = document.getElementById("masters");
-            //let phdradio = document.getElementsById("phd");
-            let levellbl = document.createElement("label");
-            //if (mastersradio.checked) {
-            //    levellbl.innerHTML = "Level: Masters";
-            //} else if (phdradio.checked) {
-            //    levellbl.innerHTML = "Level: Phd";
-            //}
-            let levelradio = document.getElementById("level");
-            console.log(levelradio.value);
-            if (levelradio.value == 'masters') {
-                levellbl.innerHTML = "Level:Masters"
-            } else {
-                levellbl.innerHTML = "Level:Phd"
+                //let mastersradio = document.getElementById("masters");
+                //let phdradio = document.getElementsById("phd");
+                let levellbl = document.createElement("label");
+                //if (mastersradio.checked) {
+                //    levellbl.innerHTML = "Level: Masters";
+                //} else if (phdradio.checked) {
+                //    levellbl.innerHTML = "Level: Phd";
+                //}
+                //let levelradio = $("input[name='radiobtn']:checked");
+                let levelradio = $("#leveldiv input:checked");
+                //if (levelradio.val() == 'masters') {
+                //    levellbl.innerHTML = "Level:Masters"
+                //} else {
+                //    levellbl.innerHTML = "Level:Phd"
+                //}                
+                levellbl.innerHTML = "Level: " + levelradio.val();
+                let leveldiv = $("#leveldiv");
+                leveldiv.replaceWith(levellbl);
+
+
+                let gamesbox = $("#gameid input:checked");
+                let gameval = "";
+                for (let i = 0; i < gamesbox.length; i++) {
+                    gameval += i == 0 ? gamesbox[i].value : ", " + gamesbox[i].value;
+                }
+                console.log("gameval", gameval);
+                //let gameval = gamesbox.map(function (element, index, array) {
+                // return element.value;
+                //                });
+                //              console.log("gameval", gameval)
+                let gameslbl = document.createElement("label");
+                gameslbl.innerHTML = gameval;
+                let gamediv = $("#gameid");
+                gamediv.replaceWith(gameslbl);
+
+
+
+                //let program = document.getElementById("selectprog");
+                let program = $("#selectprog");
+                let programlbl = document.createElement("span")
+                //programlbl.innerHTML = program.value;
+                programlbl.innerHTML = "Program: " + program.val();
+                console.log(program.val());
+                let programname = document.createElement("span");
+                //programname.innerHTML = "Program: ";
+                //$("#selectdiv").prepend(programname);
+                program.replaceWith(programlbl);
+                return false;
             }
-            let leveldiv = document.getElementById("leveldiv");
-            leveldiv.replaceWith(levellbl);
+            $("#myform").submit(display);
+        });
 
-
-            let program = document.getElementById("selectprog");
-            let programlbl = document.createElement("span")
-            programlbl.innerHTML = program.value;
-            let programname = document.createElement("span");
-            programname.innerHTML = "Program: ";
-            $("#selectdiv").prepend(programname);
-            program.replaceWith(programlbl);
-        }
 
 
     </script>
 </head>
 
 <body>
-    <div in="textDiv">
-        <span> Name: </span>
-        <span><input type="text" id="input1" name="input1" value="input"></span>
-    </div>
-    <br>
-    <div>
-        <span> Age:</span>
-        <span> <input type="number" id="age" name="agename" value="0"></span>
-    </div>
-    <br>
-    <div>
-        <span>Email:</span><span> <input type="email" id="email"></span>
-    </div>
-    <br>
-    <div id="leveldiv">
-        <span>Level</span>
-        <span><input type="radio" id="level" name="radiobtn" value="masters"></span> Masters
-        <span><input type="radio" id="level" name="radiobtn" value="phd">Phd</span>
-    </div>
-    <br>
-    <div id="selectdiv">
-        <select name="selectprogram" id="selectprog">
-            <option value="Compro"> Compro </option>
-            <option value="MBA">MBA</option>
-            <option value="MSD">MSD</option>
-            <option value="Ayurveda">Ayurveda</option>
-        </select>
-    </div>
-    <br>
-    <button onclick="display()"> submit</button>
+    <form action="#" method="get" id="myform">
+
+
+        <div in="textDiv">
+            <span> Name: </span>
+            <span><input type="text" id="input1" name="input1" value="Name" required></span>
+        </div>
+        <br>
+        <div>
+            <span> Age:</span>
+            <span> <input type="number" id="age" name="agename" value="" required minlength="2"></span>
+        </div>
+        <br>
+        <div>
+            <span>Email:</span><span> <input type="email" id="email"></span>
+        </div>
+        <br>
+        <div id="leveldiv">
+            <span>Level</span>
+            <span><input type="radio" name="radiobtn" value="masters"></span> Masters
+            <span><input type="radio" name="radiobtn" value="phd">Phd</span>
+        </div>
+        <br>
+        <div>Games:</div>
+        <div id="gameid">
+            <span>Football</span>
+            <span><input type="checkbox" value="Football"></span>
+            <span>Cricket</span>
+            <span><input type="checkbox" value="Cricket"></span>
+            <span>Jianji</span>
+            <span><input type="checkbox" value="Jianji"></span>
+        </div>
+        <br>
+        <div id="selectdiv">
+            <select name="selectprogram" id="selectprog">
+                <option value="Compro"> Compro </option>
+                <option value="MBA">MBA</option>
+                <option value="MSD">MSD</option>
+                <option value="Ayurveda">Ayurveda</option>
+            </select>
+        </div>
+        <br>
+        <input type="submit" id="mybutton" />
+        <!-- <button id="mybutton" type="submit"> submit</button> -->
+        <input type="reset">
+
+
+    </form>
 </body>
 
 </html>
