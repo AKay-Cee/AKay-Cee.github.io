@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <title>Document</title>
+    <script>
+        $(function () {
+            let objArray = [{ name: "a", age: 30 }, { name: "b", age: 20 }, { name: "Hari", age: 25 }];
+
+            //creating table
+            let myTable = createTable(objArray);
+            document.body.append(myTable);
+
+            let myButton = createButton();
+            document.body.append(myButton);
+            $("#sortButton").click(sortWrapper(objArray));
+
+            let filterButton = createFilterButton();
+            document.body.append(filterButton);
+            $("#filterButton").click(filterWrapper(objArray));
+
+
+            let avgButton = createAvgButton();
+            document.body.append(avgButton);
+            $("#avgButton").click(avgWrapper(objArray));
+
+            //area to display ave result
+            let avgspan = document.createElement("span");
+            avgspan.setAttribute("id", "avgspan");
+            document.body.append(avgspan);
+
+
+            document.body.append(document.createElement("br"));
+            document.body.append(document.createElement("br"));
+            /*
+            //creating input text field
+            let input= document.createElement("input");
+            input.setAttribute("type","text");
+            input.setAttribute("id","inputid");
+            document.body.append(input);
+            */
+
+            let list = ["Apple", "Ball", "Cat", "Dog", "Elephant"];
+
+            //create submit button
+            let submitBtn = document.createElement("button");
+            submitBtn.setAttribute("id", "submitBtn");
+            submitBtn.innerHTML = "List Elements";
+            document.body.append(submitBtn);
+            $("#submitBtn").click(listWrapper(list));
+
+            document.body.append(document.createElement("br"));
+
+            //user text input field
+            let userInput = document.createElement("input");
+            userInput.setAttribute("type", "text");
+            userInput.setAttribute("id", "userInput");
+            userInput.value = "New Value";
+            document.body.append(userInput);
+
+            //list add button
+            let addBtn = document.createElement("button");
+            addBtn.innerHTML = "Add";
+            addBtn.setAttribute("id", "addBtn");
+            document.body.append(addBtn);
+            $("#addBtn").click(addElement);
+
+            //create list area
+            let listDiv = document.createElement("div");
+            listDiv.setAttribute("id", "listDiv");
+            document.body.append(listDiv);
+
+        })
+
+        function createTable(objArray) {
+            let tableElement = document.createElement("table");
+            tableElement.setAttribute("id", "myTable");
+            tableElement.style.border = "1px solid black";
+            let headers = "<tr>";
+            for (let key in objArray[0]) {
+                headers += "<th>" + key + "</th>";
+            }
+
+            let row = "";
+            for (element of objArray) {
+                row += "<tr>";
+                for (key in element) {
+                    row += "<td>" + element[key] + "</td>";
+                }
+                row += "</tr>";
+            }
+            tableElement.innerHTML = headers + row;
+            return tableElement;
+        }
+
+        function createButton() {
+            let myButton = document.createElement("button");
+            myButton.setAttribute("id", "sortButton");
+            myButton.innerHTML = "Sort";
+            return myButton;
+
+        }
+
+        function sortWrapper(arr) {
+            return function () {
+                /*for (let i = 0; i < arr.length - 1; i++) {
+                    for (let j = i + 1; j < arr.length; j++) {
+                        if (arr[i].age > arr[j].age) {
+                            let temp = arr[i];
+                            arr[i] = arr[j];
+                            arr[j] = temp;
+                        }
+                    }
+                }*/
+                arr.sort((a, b) => a.age > b.age ? -1 : 1);
+                console.log(arr);
+                let myTable = createTable(arr);
+                $("#myTable").replaceWith(myTable);
+            }
+        }
+
+
+        function createFilterButton() {
+            let myButton = document.createElement("button");
+            myButton.setAttribute("id", "filterButton");
+            myButton.innerHTML = "filter>25";
+            return myButton;
+        }
+
+        function filterWrapper(objArray) {
+
+            return function () {
+                let arr2 = objArray.filter(function (element, index, array) {
+                    return element.age > 25;
+                });
+                let myTable = createTable(arr2);
+                $("#myTable").replaceWith(myTable);
+            }
+        }
+
+
+        function createAvgButton() {
+            let avgButton = document.createElement("button");
+            avgButton.setAttribute("id", "avgButton");
+            avgButton.innerHTML = "Average";
+            return avgButton;
+
+
+        }
+
+        function avgWrapper(arr) {
+            return function () {
+                let sum = arr.reduce(function (prev, element, index, array) {
+                    return prev + element.age;
+                }, 0);
+                console.log("inside avg wrapper");
+                let avg = sum / arr.length;
+                let avglbl = document.createElement("label");
+                avglbl.innerHTML = " Average: " + avg;
+                console.log(avglbl);
+                $("#avgspan").replaceWith(avglbl);
+            }
+
+
+        }
+
+        function listWrapper(arr) {
+            return function () {
+                let html = "";
+                for (element of arr) {
+                    html += "<li>" + element + "</li>";
+                }
+                let list = document.createElement("ul");
+                list.setAttribute("id", "myul");
+                list.innerHTML = html;
+                $("#listDiv").replaceWith(list);
+
+            }
+        }
+
+        function addElement() {
+            let input = $("#userInput");
+            let oldhtml = document.getElementById("myul");
+            let html = oldhtml.innerHTML;
+            html += "<li>" + input.val() + "</li>";
+            oldhtml.innerHTML = html;
+
+        }
+
+
+
+
+    </script>
+
+</head>
+
+<body>
+
+</body>
+
+</html>
