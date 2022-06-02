@@ -44,10 +44,11 @@ h1 {
   border: gray 4px;
   border-style: solid;
   border-radius: 20px;
-  margin: 21%;
+  margin: 0 auto;
   margin-top: 0%;
   margin-bottom: 0%;
   width:800px;
+  
 }
 
 .header1 {
