@@ -48,7 +48,7 @@ body {
 .padding20 {
     padding-bottom: 20px;
 }
-
+\layout.html
 .textColor {
     color: #95979c;
 }
@@ -56,6 +56,7 @@ body {
 .img100 {
     height: 150px;
     width: 150px;
+    object-fit: cover;
 }
 
 .paddingRight10 {
@@ -85,4 +86,21 @@ body {
 .tweetFlex {
     display: flex;
     justify-content: space-evenly;
+}
+button{
+    margin-left: -91px;
+    height: 32px;
+    padding:0px 30px;
+    background: rgb(244,143,42);
+    color: white;
+    border: 0;
+    border-radius: 20px;
+}
+#emailid{
+    background-color:rgb(48, 45, 45);
+    border-radius: 20px;
+    height: 32px;
+    width:90%;
+    padding:10px;
+    color:white;
 }
