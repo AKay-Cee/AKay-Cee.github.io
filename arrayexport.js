@@ -17,7 +17,51 @@ function oddnumbers(arr) {
     return newarr;
 }
 
-//console.log(oddnumbers(array));
+//array to even numbers
+function evennumbers(arr) {
+    let newarr = [];
+    for (element of arr) {
+        if (element % 2 == 0) {
+            newarr.push(element);
+        }
+    }
+    return newarr;
+}
+
+//array to numbers divisible by 4
+function div4numbers(arr) {
+    let newarr = [];
+    for (element of arr) {
+        if (element % 4 == 0) {
+            newarr.push(element);
+        }
+    }
+    return newarr;
+}
+
+//console.log(div4numbers(array));
+
+//sum of all odd numbers
+function sumOfOdd(arr) {
+    let sum = 0;
+    for (element of arr) {
+        if (element % 2 != 0) {
+            sum += element;
+        }
+    }
+    return sum;
+}
+
+//sum of all even numbers
+function sumOfEven(arr) {
+    let sum = 0;
+    for (element of arr) {
+        if (element % 2 == 0) {
+            sum += element;
+        }
+    }
+    return sum;
+}
 
 //sum of all numbers divisible by 4
 function sumOfDiv4(arr) {
@@ -29,7 +73,7 @@ function sumOfDiv4(arr) {
     }
     return sum;
 }
-//console.log(sumOfDiv4(array));
+console.log(sumOfEven(array));
 
 //unique numbers in an array
 function uniqueArray(arr) {
@@ -110,6 +154,6 @@ function stringToArray(arr) {
     return retarr;
 }
 
-module.exports = { sumOfDiv4, oddnumbers, uniqueArray, typeArray, destructure, updateArray, typeArray, firstOddNumIndex, firstOddNumIndex1, arrayToString, stringToArray1, stringToArray };
+module.exports = { oddnumbers, evennumbers, div4numbers, sumOfOdd, sumOfEven, sumOfDiv4, uniqueArray, typeArray, destructure, updateArray, typeArray, firstOddNumIndex, firstOddNumIndex1, arrayToString, stringToArray1, stringToArray };
 
 
